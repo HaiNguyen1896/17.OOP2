@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        turnOff() {
+            this.status = false + ' ' + 'Bóng đèn đang tắt';
+        }
+
+        turnOn() {
+            this.status = true + ' ' + 'Bóng đèn đang bật';
+        }
+    }
+
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+
+        ConnectToLamp(ElectricLamp) {
+            return this.lamp = ElectricLamp;
+        }
+
+        switchOff() {
+            this.lamp.turnOff();
+            return this.status = false + ' ' + 'Nút đang tắt';
+        }
+
+        switchOn() {
+            this.lamp.turnOn();
+            return this.status = true + ' ' + 'Nút đang bật';
+        }
+    }
+
+    let electricLamp = new ElectricLamp(false);
+    let switchButton = new SwitchButton(false, electricLamp);
+   // console.log(`Ban đầu nút đang ${switchButton.status} và bóng đèn đang ${electricLamp.status} `)
+    console.log(switchButton.switchOn());
+    console.log(electricLamp.getStatus());
+    console.log(switchButton.switchOff());
+    console.log(electricLamp.getStatus());
+</script>
